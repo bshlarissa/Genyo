@@ -8,32 +8,34 @@
     <script src="script.js"></script>
     <title>CRUD</title>
 </head>
-<body>
+<body onload="leiaTodos()">
     <div class="conteudo">
     <div class="formulario">
         <form class="criarFormulario">
-            <input type="text" class="nome"/>
-            <input type="text" class="idade"/>
-            <button>Criar</button>
+            <input type="text" class="nome" placeholder="Digete seu Nome"/>
+            <input type="text" class="idade" placeholder="Digite sua Idade "/>
+            <button type="button" onclick="add()">Criar Novo</button>
         </form>
 
         <form class="atualizarFormulario">
-                <input type="text" class="u-nome"/>
-                <input type="text" class="u-idade"/>
-                <button>Atualizar</button>
+                <input class="u-nome"/>
+                <input class="u-idade"/> 
+                <button type="button">Atualizar</button>
         </form>
 
-        <div class="adicionar">
-            <button>Adicionar+</button>
+        <div class="adicionarFormulario">
+            <button type="button" onclick="create()">Adicionar+</button>
         </div>
 
         <table>
             <thead>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Ação</th>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Ação</th>
+                </tr>
             </thead>
-            <tbody class="tabelaDados">
+            <tbody class="dadosTabela">
 
             </tbody>
         </table>

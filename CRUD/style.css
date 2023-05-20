@@ -7,10 +7,10 @@
 
 .formulario{
     margin-top: 20px;
-    width: 40vh;
+    width: 80vh;
     border-radius: 10px;
     height: 80vh;
-    padding: 10px;
+    padding: 30px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -31,19 +31,19 @@ form button{
   cursor: pointer ;
 }
 
-.adicionar{
+.adicionarFormulario{
     width:100% ;
     padding: 10px 0px 0px 90px;
 }
 
-.adicionar button{
+.adicionarFormulario button{
     padding: 8px;
     background-color:rgb(43, 62, 55);  
     color: white;
     border-radius: 7px;
 }
 
-.adicionar button:hover{
+.adicionarFormulario button:hover{
     background-color: #386752;;
     cursor: pointer ;
 }
