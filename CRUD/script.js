@@ -12,35 +12,70 @@ function leiaTodos(){
      var elements = "";
 
     objectdata.map(record => (
-        elements += `<tr>
+        elements += 
+        `<tr>
             <td>${record.nome}</td>
             <td>${record.idade}</td>
             <td>
-            <button>Editar</button>
-            <button>Apagar</button>
-        </td>
+            <button class="editar" type="button" onclick={editar(${record.id})} 
+            style= "padding: 8px;
+            background-color:rgb(43, 62, 55);  
+            color: white;
+            border-radius: 7px;">Editar</button>
+
+            <button class="apagar" type="button" onclick={apagar(${record.id})} 
+            style= "padding: 8px;
+            background-color:rgb(43, 62, 55);  
+            color: white;
+            border-radius: 7px;">Apagar</button>
+            </td>
         </tr>`
     ))
 
     tabelaDados.innerHTML = elements;
+
     }   
 
-    function create() {
+    function apagar(id){
+        dados = dados.filter (rec => rec.id !== id);
+        leiaTodos ();
+    }
+
+    function criarNovoRegistro() {
         document.querySelector(".criarFormulario").style.display = "block"; 
         document.querySelector(".adicionarFormulario").style.display = "none ";
     }
 
-    function add() {
+    function adicionarNovoRegistro() {
         var nome = document.querySelector(".nome").value;
         var idade = document.querySelector(".idade").value;
 
         var newObject = {id: 3, nome: nome, idade: idade};
         dados.push(newObject);
         
-
         document.querySelector(".criarFormulario").style.display = "none"; 
         document.querySelector(".adicionarFormulario").style.display = "block"; 
 
         leiaTodos(); 
+    }
 
+    function editar(id) {
+        document.querySelector('.atualizarFormulario').style.display ="block";
+        var obj = dados.find (rec => rec.id === id);
+
+        document.querySelector('.u-nome').value = obj.nome;
+        document.querySelector('.u-idade').value = obj.idade;
+        document.querySelector('.id').value = obj.id;
+    }
+
+    function atualizar() {
+        var id = parseInt(document.querySelector('.id').value);
+        var nome = document.querySelector('.u-nome').value;
+        var idade = document.querySelector('.u-idade').value;
+
+        var index = dados.findIndex(rec => rec.id === id);
+        dados[index] = {id, nome, idade};
+        document.querySelector('.atualizarFormulario').style.display ="none";
+
+        leiaTodos();
     }

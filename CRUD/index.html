@@ -12,19 +12,20 @@
     <div class="conteudo">
     <div class="formulario">
         <form class="criarFormulario">
-            <input type="text" class="nome" placeholder="Digete seu Nome"/>
+            <input type="text" class="nome" placeholder="Digite seu Nome"/>
             <input type="text" class="idade" placeholder="Digite sua Idade "/>
-            <button type="button" onclick="add()">Criar Novo</button>
+            <button type="button" onclick="adicionarNovoRegistro()">Criar Novo</button>
         </form>
 
         <form class="atualizarFormulario">
+                <input type="text" hidden class="id"/>
                 <input class="u-nome"/>
                 <input class="u-idade"/> 
-                <button type="button">Atualizar</button>
+                <button type="button" onclick="atualizar()" > Atualizar</button>
         </form>
 
         <div class="adicionarFormulario">
-            <button type="button" onclick="create()">Adicionar+</button>
+            <button type="button" onclick="criarNovoRegistro()">Adicionar+</button>
         </div>
 
         <table>
