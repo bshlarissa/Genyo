@@ -19,9 +19,10 @@
             <td>${record.idade}</td>
             <td>
             <button class="editar" type="button" onclick={editar(${record.id})}>Editar</button>
-            <button class="apagar" type="button" onclick={apagar(${record.id})>Apagar</button>
+            <button class="apagar" type="button" onclick={apagar(${record.id})}>Apagar</button>
             </td>
         </tr>`
+        
     ))
 
     tabelaDados.innerHTML = elementos;
@@ -30,7 +31,7 @@
 
     function apagar(id) {
         dados = dados.filter (rec => rec.id !== id);
-        leiaTodos ();
+        leiaTodos();
     }
 
     function criarNovoRegistro() {
