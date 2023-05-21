@@ -4,15 +4,15 @@ let dados = [
 ]
 
 function leiaTodos(){
-    localStorage.setItem("object", JSON.stringify(dados));
+    localStorage.setItem("informacoes", JSON.stringify(dados));
      var tabelaDados = document.querySelector (".dadosTabela");
 
-     var object = localStorage.getItem('object');
-     var objectdata = JSON.parse(object);
-     var elements = "";
+     var informacoes = localStorage.getItem('informacoes');
+     var dadosDaInformacao = JSON.parse(informacoes);
+     var elementos = "";
  
-    objectdata.map(record => (
-        elements += 
+     dadosDaInformacao.map(record => (
+        elementos += 
         `<tr>
             <td>${record.nome}</td>
             <td>${record.idade}</td>
@@ -32,7 +32,7 @@ function leiaTodos(){
         </tr>`
     ))
 
-    tabelaDados.innerHTML = elements;
+    tabelaDados.innerHTML = elementos;
 
     }   
 
@@ -50,8 +50,8 @@ function leiaTodos(){
         var nome = document.querySelector(".nome").value;
         var idade = document.querySelector(".idade").value;
 
-        var newObject = {id: 3, nome: nome, idade: idade};
-        dados.push(newObject);
+        var novoRegistro = {id: 3, nome: nome, idade: idade};
+        dados.push(novoRegistro);
         
         document.querySelector(".criarFormulario").style.display = "none"; 
         document.querySelector(".adicionarFormulario").style.display = "block"; 
