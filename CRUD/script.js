@@ -1,9 +1,10 @@
-let dados = [
+    
+    let dados = [
     {id: 1, nome: "larissa", idade: "21 anos"},
     {id: 2, nome: "pedro", idade: "22 anos"}
 ]
 
-function leiaTodos(){
+    function leiaTodos(){
     localStorage.setItem("informacoes", JSON.stringify(dados));
      var tabelaDados = document.querySelector (".dadosTabela");
 
@@ -17,17 +18,8 @@ function leiaTodos(){
             <td>${record.nome}</td>
             <td>${record.idade}</td>
             <td>
-            <button class="editar" type="button" onclick={editar(${record.id})} 
-            style= "padding: 8px;
-            background-color:rgb(43, 62, 55);  
-            color: white;
-            border-radius: 7px;">Editar</button>
-
-            <button class="apagar" type="button" onclick={apagar(${record.id})} 
-            style= "padding: 8px;
-            background-color:rgb(43, 62, 55);  
-            color: white;
-            border-radius: 7px;">Apagar</button>
+            <button class="editar" type="button" onclick={editar(${record.id})}>Editar</button>
+            <button class="apagar" type="button" onclick={apagar(${record.id})>Apagar</button>
             </td>
         </tr>`
     ))

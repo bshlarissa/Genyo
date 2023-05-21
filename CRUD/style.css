@@ -54,6 +54,14 @@ table{
     text-align: center;
 }
 
+.apagar, .editar{
+    padding: 8px;
+    background-color:rgb(43, 62, 55);  
+    color: white;
+    border-radius: 7px; 
+}
+
 .atualizarFormulario , .criarFormulario{
     display:none;
 }
+
