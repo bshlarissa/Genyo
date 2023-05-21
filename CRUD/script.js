@@ -1,8 +1,8 @@
     
     let dados = [
-    {id: 1, nome: "larissa", idade: "21 anos"},
-    {id: 2, nome: "pedro", idade: "22 anos"}
-]
+    {id: 1, nome: "user1", idade: "21"},
+    {id: 2, nome: "user2", idade: "22"}
+    ]
 
     function leiaTodos(){
     localStorage.setItem("informacoes", JSON.stringify(dados));
@@ -28,7 +28,7 @@
 
     }   
 
-    function apagar(id){
+    function apagar(id) {
         dados = dados.filter (rec => rec.id !== id);
         leiaTodos ();
     }
