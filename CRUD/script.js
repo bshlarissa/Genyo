@@ -10,7 +10,7 @@ function leiaTodos(){
      var object = localStorage.getItem('object');
      var objectdata = JSON.parse(object);
      var elements = "";
-
+ 
     objectdata.map(record => (
         elements += 
         `<tr>
